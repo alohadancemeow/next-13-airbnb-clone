@@ -14,11 +14,13 @@ import { AiFillGithub } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 type Props = {};
 
 const RegisterModal = (props: Props) => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -32,6 +34,11 @@ const RegisterModal = (props: Props) => {
       password: "",
     },
   });
+
+  const onToggle = useCallback(() => {
+    registerModal.onClose();
+    loginModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
@@ -99,7 +106,7 @@ const RegisterModal = (props: Props) => {
         <p>
           Already have an account?
           <span
-            // onClick={onToggle}
+            onClick={onToggle}
             className="cursor-pointer text-neutral-800 hover:underline"
           >
             Log in

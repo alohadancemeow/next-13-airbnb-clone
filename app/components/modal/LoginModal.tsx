@@ -37,6 +37,11 @@ const LoginModal = (props: Props) => {
     },
   });
 
+  const onToggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
@@ -96,12 +101,12 @@ const LoginModal = (props: Props) => {
 
       <div className="mt-4 font-light text-center text-neutral-500">
         <p>
-          Already have an account?
+          First time using Aiebnb?
           <span
-            // onClick={onToggle}
+            onClick={onToggle}
             className="cursor-pointer text-neutral-800 hover:underline"
           >
-            Log in
+            Create a account
           </span>
         </p>
       </div>
