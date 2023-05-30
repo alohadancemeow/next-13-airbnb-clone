@@ -5,6 +5,7 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
+import Categories from "./Categories";
 
 type Props = {
   currentUser?: SefeUser | null;
@@ -21,6 +22,7 @@ const Navbar = ({ currentUser }: Props) => {
             <UserMenu currentUser={currentUser} />
           </div>
         </Container>
+        <Categories />
       </div>
     </div>
   );
