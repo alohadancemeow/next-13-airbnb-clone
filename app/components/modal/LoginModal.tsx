@@ -85,13 +85,13 @@ const LoginModal = (props: Props) => {
         outline
         label="Continue with google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
         label="Continue with github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn("github")}
       />
 
       <div className="mt-4 font-light text-center text-neutral-500">

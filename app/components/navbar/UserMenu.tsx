@@ -7,13 +7,12 @@ import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 
-import { User } from "@prisma/client";
-
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { SefeUser } from "@/app/types";
 
 type Props = {
-  currentUser?: User | null;
+  currentUser?: SefeUser | null;
 };
 
 const UserMenu = ({ currentUser }: Props) => {
@@ -42,7 +41,7 @@ const UserMenu = ({ currentUser }: Props) => {
         >
           <AiOutlineMenu />
           <div className="hidden md:block">
-            <Avatar />
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
       </div>

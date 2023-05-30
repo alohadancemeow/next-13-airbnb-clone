@@ -1,14 +1,13 @@
 "use client";
 
+import { SefeUser } from "@/app/types";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
-import { User } from "@prisma/client";
-
 type Props = {
-  currentUser?: User | null;
+  currentUser?: SefeUser | null;
 };
 
 const Navbar = ({ currentUser }: Props) => {

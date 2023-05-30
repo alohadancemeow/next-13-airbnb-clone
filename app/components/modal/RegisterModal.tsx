@@ -13,6 +13,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 import { toast } from "react-hot-toast";
 import Button from "../Button";
+import { signIn } from "next-auth/react";
 
 type Props = {};
 
@@ -85,13 +86,13 @@ const RegisterModal = (props: Props) => {
         outline
         label="Continue with google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
         label="Continue with github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn("github")}
       />
 
       <div className="mt-4 font-light text-center text-neutral-500">
