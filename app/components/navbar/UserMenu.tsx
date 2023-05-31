@@ -9,11 +9,11 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
-import { SefeUser } from "@/app/types";
+import { SafeUser } from "@/app/types";
 import useRantModal from "@/app/hooks/useRantModal";
 
 type Props = {
-  currentUser?: SefeUser | null;
+  currentUser?: SafeUser | null;
 };
 
 const UserMenu = ({ currentUser }: Props) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { SefeUser } from "@/app/types";
+import { SafeUser } from "@/app/types";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
@@ -8,7 +8,7 @@ import UserMenu from "./UserMenu";
 import Categories from "./Categories";
 
 type Props = {
-  currentUser?: SefeUser | null;
+  currentUser?: SafeUser | null;
 };
 
 const Navbar = ({ currentUser }: Props) => {
